@@ -227,7 +227,7 @@ const faker = require("faker");
         methods.clickButton(createMasterDataLocators.createMasterDataModal)
         methods.clickButton(createMasterDataLocators.generalDocumentButtonCMD)
         methods.fillInput(createMasterDataLocators.generalDocumentUrlCMD,'www.atez.com{enter}')
-        methods.shouldHaveValue(createMasterDataLocators.generalDocumentUrlCMD,'www.atez.com')
+        methods.shouldHaveItem(createMasterDataLocators.atezUrlButton)
 
     })
 
@@ -245,7 +245,9 @@ const faker = require("faker");
         methods.clickButton(createMasterDataLocators.createMasterDataModal)
         methods.clickButton(createMasterDataLocators.generalDocumentButtonCMD)
         methods.fillInput(createMasterDataLocators.generalDocumentUrlCMD,'www.atez.com{enter}')
-        methods.shouldHaveValue(createMasterDataLocators.generalDocumentUrlCMD,'www.atez.com')
+        methods.mouseHover(createMasterDataLocators.atezUrlButton)
+        methods.clickButton(createMasterDataLocators.urlTrashIconCMD)
+        methods.shouldHaveNotItem(createMasterDataLocators.atezUrlButton)
 
     })
 
@@ -263,9 +265,31 @@ const faker = require("faker");
         methods.clickButton(createMasterDataLocators.createMasterDataModal)
         methods.clickButton(createMasterDataLocators.generalDocumentButtonCMD)
         methods.fillInput(createMasterDataLocators.generalDocumentUrlCMD,'www.atez.com{enter}')
-        methods.shouldHaveValue(createMasterDataLocators.generalDocumentUrlCMD,'www.atez.com')
+        methods.clickButton(createMasterDataLocators.atezUrlButton)
+        methods.checkTextIsVisible('Farklı bir adrese yönlendiriliyorsunuz.', true)
 
     })
+
+    it("16.Create Master Data ekranında Genel Belge butonu ile gelen modalda başarıyla doküman yüklendiğinin görüntülenmesi", () => {
+        methods.visit()
+        Cypress.on('uncaught:exception', (err, runnable) => {
+            return false })
+        methods.clickButton(loginPageLocators.loginUsername)
+        methods.fillInput(loginPageLocators.loginUsername,'ali.dede@alidede.com')
+        methods.fillInput(loginPageLocators.loginPassword,'qwer.123')
+        methods.clickButton(loginPageLocators.loginButton)
+        methods.clickButton(createMasterDataLocators.createMasterDataDashboard)
+        methods.clickButton(createMasterDataLocators.gtipTespitiTR)
+        methods.clickButton(createMasterDataLocators.dcsltdModal)
+        methods.clickButton(createMasterDataLocators.createMasterDataModal)
+        methods.clickButton(createMasterDataLocators.generalDocumentButtonCMD)
+        const fixtureFile = 'logifyUploadFile.xlsx';
+        cy.get('[data-test-id="dragger-docs"]').attachFile(fixtureFile);
+        methods.checkTextIsVisible("logifyUploadFile.xlsx yüklendi.", true)
+          
+
+
+    })    
 
     it("19.Create Master Data ekranında İndirilebilir İçerik üzerinden örnek Türkçe şablonun başarıyla indirilmesi", () => {
         methods.visit()
