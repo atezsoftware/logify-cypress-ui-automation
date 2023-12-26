@@ -1,3 +1,4 @@
+import 'cypress-file-upload'
 import methods from "../pages/Methods";
 
 Cypress.Commands.add('loginLogify',(username,password)=>{

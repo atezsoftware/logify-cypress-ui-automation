@@ -19,6 +19,9 @@ export default{
     generalDocumentUrlCMD:"//input[@data-test-id='document-link-adress']",
     downloadableContentCMD:"//button[@data-test-id='dropdown-link']",
     turkceExcelTemplateCMD:"//a[contains(text(),'turkce-excel-sablonu.xlsx')]",
-    englishExcelTemplateCMD:"//a[contains(text(),'english-excel-template.xlsx')]"
+    englishExcelTemplateCMD:"//a[contains(text(),'english-excel-template.xlsx')]",
+    atezUrlButton:"//span[contains(text(),'www.atez.com')]",
+    urlTrashIconCMD:"//span[@aria-label='delete']",
+    generalDocumentUploadFile:"(//input[@type='file'])[2]"
 
 };
