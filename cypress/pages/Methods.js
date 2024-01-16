@@ -1,5 +1,6 @@
 require('cypress-xpath');
 import "cypress-real-events";
+import  random  from 'lodash';
 import { faker } from 'faker';
 import Faker from 'faker/lib';
 
@@ -131,11 +132,11 @@ class Methods{
       return lastname;
     }
     fillRandomName(locator){
-      const name = this.randomEmail();
+      const name = this.randomName();
       return this.fillInput(locator, name);
     }
     fillRandomLastName(locator){
-      const lastname = this.randomEmail();
+      const lastname = this.randomLastName();
       return this.fillInput(locator, lastname);
     }
     shouldPageExistItem(locators){

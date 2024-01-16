@@ -2,6 +2,8 @@ import methods from "../pages/Methods"
 import loginPageLocators from "../fixtures/loginLocators"
 import createMasterDataLocators from "../fixtures/createMasterDataLocators"
 import "cypress-real-events";
+import  random  from 'lodash';
+import Name from "faker/lib/name";
 const faker = require("faker");
 
     Cypress.on('Create Master Data Page', (err, runnable) => {
@@ -44,8 +46,8 @@ const faker = require("faker");
         methods.fillInput(loginPageLocators.loginPassword,'qwer.123')
         methods.clickButton(loginPageLocators.loginButton)
         methods.clickButton(createMasterDataLocators.createMasterDataDashboard)
+        methods.wait(3)
         methods.clickButton(createMasterDataLocators.gtipTespitiTR)
-        methods.clickButton(createMasterDataLocators.dcsltdModal)
         methods.checkButtonNotDisabled(createMasterDataLocators.createMasterDataModal)
 
     })
@@ -59,8 +61,8 @@ const faker = require("faker");
         methods.fillInput(loginPageLocators.loginPassword,'qwer.123')
         methods.clickButton(loginPageLocators.loginButton)
         methods.clickButton(createMasterDataLocators.createMasterDataDashboard)
+        methods.wait(3)
         methods.clickButton(createMasterDataLocators.gtipTespitiTR)
-        methods.clickButton(createMasterDataLocators.dcsltdModal)
         methods.clickButton(createMasterDataLocators.cancelCustomsFirmModal)
         methods.shouldHaveNotItem(createMasterDataLocators.cancelCustomsFirmModal)
 
@@ -75,8 +77,8 @@ const faker = require("faker");
         methods.fillInput(loginPageLocators.loginPassword,'qwer.123')
         methods.clickButton(loginPageLocators.loginButton)
         methods.clickButton(createMasterDataLocators.createMasterDataDashboard)
+        methods.wait(3)
         methods.clickButton(createMasterDataLocators.gtipTespitiTR)
-        methods.clickButton(createMasterDataLocators.dcsltdModal)
         methods.clickButton(createMasterDataLocators.createMasterDataModal)
         methods.checkTextIsVisible('Ürün Kodu',true)
         methods.checkTextIsVisible('İş Bölümü',true)
@@ -93,8 +95,8 @@ const faker = require("faker");
         methods.fillInput(loginPageLocators.loginPassword,'qwer.123')
         methods.clickButton(loginPageLocators.loginButton)
         methods.clickButton(createMasterDataLocators.createMasterDataDashboard)
+        methods.wait(3)
         methods.clickButton(createMasterDataLocators.gtipTespitiTR)
-        methods.clickButton(createMasterDataLocators.dcsltdModal)
         methods.clickButton(createMasterDataLocators.createMasterDataModal)
         methods.checkButtonDisabled(createMasterDataLocators.sendButtonCMD)
         methods.checkButtonDisabled(createMasterDataLocators.saveButtonCMD)
@@ -110,12 +112,11 @@ const faker = require("faker");
         methods.fillInput(loginPageLocators.loginPassword,'qwer.123')
         methods.clickButton(loginPageLocators.loginButton)
         methods.clickButton(createMasterDataLocators.createMasterDataDashboard)
+        methods.wait(3)
         methods.clickButton(createMasterDataLocators.gtipTespitiTR)
-        methods.clickButton(createMasterDataLocators.dcsltdModal)
         methods.clickButton(createMasterDataLocators.createMasterDataModal)
         methods.clickButton(createMasterDataLocators.servicesButtonCMD)
         methods.clickButton(createMasterDataLocators.gtipTespitCH)
-        methods.clickButton(createMasterDataLocators.dcsltdModalDropdown)
         methods.clickButton(createMasterDataLocators.applyButtonServicesCMD)
         methods.clickButton(createMasterDataLocators.servicesButtonCMD)
         methods.checkRadioButtonSelected(createMasterDataLocators.gtipTespitCH)
@@ -131,12 +132,11 @@ const faker = require("faker");
         methods.fillInput(loginPageLocators.loginPassword,'qwer.123')
         methods.clickButton(loginPageLocators.loginButton)
         methods.clickButton(createMasterDataLocators.createMasterDataDashboard)
+        methods.wait(3)
         methods.clickButton(createMasterDataLocators.gtipTespitiTR)
-        methods.clickButton(createMasterDataLocators.dcsltdModal)
         methods.clickButton(createMasterDataLocators.createMasterDataModal)
         methods.clickButton(createMasterDataLocators.servicesButtonCMD)
         methods.clickButton(createMasterDataLocators.gtipTespitCH)
-        methods.clickButton(createMasterDataLocators.dcsltdModalDropdown)
         methods.clickButton(createMasterDataLocators.cancelButtonServicesCMD)
         methods.clickButton(createMasterDataLocators.servicesButtonCMD)
         methods.checkRadioButtonNotSelected(createMasterDataLocators.gtipTespitCH)
@@ -152,8 +152,8 @@ const faker = require("faker");
         methods.fillInput(loginPageLocators.loginPassword,'qwer.123')
         methods.clickButton(loginPageLocators.loginButton)
         methods.clickButton(createMasterDataLocators.createMasterDataDashboard)
+        methods.wait(3)
         methods.clickButton(createMasterDataLocators.gtipTespitiTR)
-        methods.clickButton(createMasterDataLocators.dcsltdModal)
         methods.clickButton(createMasterDataLocators.createMasterDataModal)
         methods.fillInput(createMasterDataLocators.workOrderTitleCMD,'TestTitle')
         methods.shouldHaveValue(createMasterDataLocators.workOrderTitleCMD,'TestTitle')
@@ -169,8 +169,9 @@ const faker = require("faker");
         methods.fillInput(loginPageLocators.loginPassword,'qwer.123')
         methods.clickButton(loginPageLocators.loginButton)
         methods.clickButton(createMasterDataLocators.createMasterDataDashboard)
+        methods.wait(3)
         methods.clickButton(createMasterDataLocators.gtipTespitiTR)
-        methods.clickButton(createMasterDataLocators.dcsltdModal)
+        methods.wait(3)
         methods.clickButton(createMasterDataLocators.createMasterDataModal)
         methods.fillInput(createMasterDataLocators.workOrderTitleCMD,'TestTitleTestTitleTestTitleTestTitleTestT')
         methods.shouldNotHaveValue(createMasterDataLocators.workOrderTitleCMD,'TestTitleTestTitleTestTitleTestTitleTestT')
@@ -186,8 +187,8 @@ const faker = require("faker");
         methods.fillInput(loginPageLocators.loginPassword,'qwer.123')
         methods.clickButton(loginPageLocators.loginButton)
         methods.clickButton(createMasterDataLocators.createMasterDataDashboard)
+        methods.wait(3)
         methods.clickButton(createMasterDataLocators.gtipTespitiTR)
-        methods.clickButton(createMasterDataLocators.dcsltdModal)
         methods.clickButton(createMasterDataLocators.createMasterDataModal)
         methods.fillInput(createMasterDataLocators.workOrderTitleCMD,'TestTitle')
         methods.clickButton(createMasterDataLocators.okeyWorkOrderTitleCMD)
@@ -204,8 +205,9 @@ const faker = require("faker");
         methods.fillInput(loginPageLocators.loginPassword,'qwer.123')
         methods.clickButton(loginPageLocators.loginButton)
         methods.clickButton(createMasterDataLocators.createMasterDataDashboard)
+        methods.wait(3)
         methods.clickButton(createMasterDataLocators.gtipTespitiTR)
-        methods.clickButton(createMasterDataLocators.dcsltdModal)
+        methods.wait(3)
         methods.clickButton(createMasterDataLocators.createMasterDataModal)
         methods.fillInput(createMasterDataLocators.workOrderTitleCMD,'TestTitle')
         methods.clickButton(createMasterDataLocators.cancelWorkOrderTitleCMD)
@@ -222,8 +224,8 @@ const faker = require("faker");
         methods.fillInput(loginPageLocators.loginPassword,'qwer.123')
         methods.clickButton(loginPageLocators.loginButton)
         methods.clickButton(createMasterDataLocators.createMasterDataDashboard)
+        methods.wait(3)
         methods.clickButton(createMasterDataLocators.gtipTespitiTR)
-        methods.clickButton(createMasterDataLocators.dcsltdModal)
         methods.clickButton(createMasterDataLocators.createMasterDataModal)
         methods.clickButton(createMasterDataLocators.generalDocumentButtonCMD)
         methods.fillInput(createMasterDataLocators.generalDocumentUrlCMD,'www.atez.com{enter}')
@@ -240,8 +242,8 @@ const faker = require("faker");
         methods.fillInput(loginPageLocators.loginPassword,'qwer.123')
         methods.clickButton(loginPageLocators.loginButton)
         methods.clickButton(createMasterDataLocators.createMasterDataDashboard)
+        methods.wait(3)
         methods.clickButton(createMasterDataLocators.gtipTespitiTR)
-        methods.clickButton(createMasterDataLocators.dcsltdModal)
         methods.clickButton(createMasterDataLocators.createMasterDataModal)
         methods.clickButton(createMasterDataLocators.generalDocumentButtonCMD)
         methods.fillInput(createMasterDataLocators.generalDocumentUrlCMD,'www.atez.com{enter}')
@@ -260,8 +262,8 @@ const faker = require("faker");
         methods.fillInput(loginPageLocators.loginPassword,'qwer.123')
         methods.clickButton(loginPageLocators.loginButton)
         methods.clickButton(createMasterDataLocators.createMasterDataDashboard)
+        methods.wait(3)
         methods.clickButton(createMasterDataLocators.gtipTespitiTR)
-        methods.clickButton(createMasterDataLocators.dcsltdModal)
         methods.clickButton(createMasterDataLocators.createMasterDataModal)
         methods.clickButton(createMasterDataLocators.generalDocumentButtonCMD)
         methods.fillInput(createMasterDataLocators.generalDocumentUrlCMD,'www.atez.com{enter}')
@@ -279,17 +281,56 @@ const faker = require("faker");
         methods.fillInput(loginPageLocators.loginPassword,'qwer.123')
         methods.clickButton(loginPageLocators.loginButton)
         methods.clickButton(createMasterDataLocators.createMasterDataDashboard)
+        methods.wait(3)
         methods.clickButton(createMasterDataLocators.gtipTespitiTR)
-        methods.clickButton(createMasterDataLocators.dcsltdModal)
         methods.clickButton(createMasterDataLocators.createMasterDataModal)
         methods.clickButton(createMasterDataLocators.generalDocumentButtonCMD)
         const fixtureFile = 'logifyUploadFile.xlsx';
         cy.get('[data-test-id="dragger-docs"]').attachFile(fixtureFile);
         methods.checkTextIsVisible("logifyUploadFile.xlsx yüklendi.", true)
-          
 
+    })  
+    
+    it("17.Create Master Data ekranında Genel Belge butonu ile gelen modalda yüklenen dosyanın başarıyla silindiğinin görüntülenmesi", () => {
+        methods.visit()
+        Cypress.on('uncaught:exception', (err, runnable) => {
+            return false })
+        methods.clickButton(loginPageLocators.loginUsername)
+        methods.fillInput(loginPageLocators.loginUsername,'ali.dede@alidede.com')
+        methods.fillInput(loginPageLocators.loginPassword,'qwer.123')
+        methods.clickButton(loginPageLocators.loginButton)
+        methods.clickButton(createMasterDataLocators.createMasterDataDashboard)
+        methods.wait(3)
+        methods.clickButton(createMasterDataLocators.gtipTespitiTR)
+        methods.clickButton(createMasterDataLocators.createMasterDataModal)
+        methods.clickButton(createMasterDataLocators.generalDocumentButtonCMD)
+        const fixtureFile = 'logifyUploadFile.xlsx';
+        cy.get('[data-test-id="dragger-docs"]').attachFile(fixtureFile);
+        methods.clickButton(createMasterDataLocators.documentTrashIconCMD)
+        methods.checkTextIsVisible("Doküman başarıyla silindi", true)
 
-    })    
+    })
+
+    it("18.Create Master Data ekranında Genel Belge butonu ile gelen modalda yüklenen dosyanın başarıyla indirildiğinin görüntülenmesi", () => {
+        methods.visit()
+        Cypress.on('uncaught:exception', (err, runnable) => {
+            return false })
+        methods.clickButton(loginPageLocators.loginUsername)
+        methods.fillInput(loginPageLocators.loginUsername,'ali.dede@alidede.com')
+        methods.fillInput(loginPageLocators.loginPassword,'qwer.123')
+        methods.clickButton(loginPageLocators.loginButton)
+        methods.clickButton(createMasterDataLocators.createMasterDataDashboard)
+        methods.wait(3)
+        methods.clickButton(createMasterDataLocators.gtipTespitiTR)
+        methods.clickButton(createMasterDataLocators.createMasterDataModal)
+        methods.clickButton(createMasterDataLocators.generalDocumentButtonCMD)
+        const fixtureFile = 'logifyUploadFile.xlsx';
+        cy.get('[data-test-id="dragger-docs"]').attachFile(fixtureFile);
+        methods.wait(3)
+        methods.mouseHover(createMasterDataLocators.downloadUploadDocumentCMD)
+        methods.checkTextIsVisible("logifyUploadFile.xlsx İndirildi", true)
+
+    })
 
     it("19.Create Master Data ekranında İndirilebilir İçerik üzerinden örnek Türkçe şablonun başarıyla indirilmesi", () => {
         methods.visit()
@@ -300,8 +341,8 @@ const faker = require("faker");
         methods.fillInput(loginPageLocators.loginPassword,'qwer.123')
         methods.clickButton(loginPageLocators.loginButton)
         methods.clickButton(createMasterDataLocators.createMasterDataDashboard)
+        methods.wait(3)
         methods.clickButton(createMasterDataLocators.gtipTespitiTR)
-        methods.clickButton(createMasterDataLocators.dcsltdModal)
         methods.clickButton(createMasterDataLocators.createMasterDataModal)
         methods.clickButton(createMasterDataLocators.downloadableContentCMD)
         methods.clickButton(createMasterDataLocators.turkceExcelTemplateCMD)
@@ -318,12 +359,37 @@ const faker = require("faker");
         methods.fillInput(loginPageLocators.loginPassword,'qwer.123')
         methods.clickButton(loginPageLocators.loginButton)
         methods.clickButton(createMasterDataLocators.createMasterDataDashboard)
+        methods.wait(3)
         methods.clickButton(createMasterDataLocators.gtipTespitiTR)
-        methods.clickButton(createMasterDataLocators.dcsltdModal)
         methods.clickButton(createMasterDataLocators.createMasterDataModal)
         methods.clickButton(createMasterDataLocators.downloadableContentCMD)
         methods.clickButton(createMasterDataLocators.englishExcelTemplateCMD)
         methods.checkTextIsVisible('english-excel-template.xlsx İndirildi',true)
+
+    })
+
+    it("21.Zorunlu alanlar doldurulduktan sonra kalem silme butonu ile kalemin silinmesinin iptalinin başarıyla görüntülenmesi", () => {
+        methods.visit()
+        Cypress.on('uncaught:exception', (err, runnable) => {
+            return false })
+        methods.clickButton(loginPageLocators.loginUsername)
+        methods.fillInput(loginPageLocators.loginUsername,'ali.dede@alidede.com')
+        methods.fillInput(loginPageLocators.loginPassword,'qwer.123')
+        methods.clickButton(loginPageLocators.loginButton)
+        methods.clickButton(createMasterDataLocators.createMasterDataDashboard)
+        methods.wait(3)
+        methods.clickButton(createMasterDataLocators.gtipTespitiTR)
+        methods.clickButton(createMasterDataLocators.createMasterDataModal)
+        methods.fillRandomName(createMasterDataLocators.productIdTextBoxCMD, name)
+        methods.clickButton(createMasterDataLocators.businessDivisionCMD)
+        methods.clickButton(createMasterDataLocators.atezBusinessDivisionCMD)
+        methods.wait(2)
+        methods.clickButton(createMasterDataLocators.productGroupCMD)
+        methods.clickButton(createMasterDataLocators.merhabaProductGroup)
+        methods.fillRandomName(createMasterDataLocators.productDescriptionTextBoxCMD, name)
+        methods.clickButton(createMasterDataLocators.trashIconForProductCMD)
+        methods.clickButton(createMasterDataLocators.deleteButtonForTrashProductCMD)
+        methods.shouldNotHaveValue(createMasterDataLocators.productIdTextBoxCMD, name)
 
     })
 
