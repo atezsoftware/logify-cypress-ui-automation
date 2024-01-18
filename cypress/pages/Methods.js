@@ -33,6 +33,9 @@ class Methods{
     mouseHover(locator){
       return cy.xpath(locator).eq(0).trigger('mouseover',{multiple:true}).click()
     }
+    mouseOver(locator){
+      return cy.xpath(locator).eq(0).trigger('mouseover',{multiple:true})
+    }
     checkRadioButtonSelected(locator,text){
       return cy.xpath(locator).should('be.checked');
     }
@@ -41,6 +44,9 @@ class Methods{
     }
     checkTextIsVisible(text, visibility = true) {
       cy.contains('body', text).should(visibility ? 'be.visible' : 'not.exist');
+    }
+    selectCheckbox(locator) {
+      return this.findElement(locator).check({force: true});
     }
     selectItem(locators,text){
         return cy.xpath(locators).select(text)
@@ -88,7 +94,7 @@ class Methods{
     }
     scrollElement(locators){
       return cy.xpath(locators).scrollIntoView() 
-    }   
+    }
     randomEmail(){
       const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
       let email = '';
@@ -237,4 +243,3 @@ class Methods{
 }
 
 export default new Methods();
-
