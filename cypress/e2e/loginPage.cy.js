@@ -12,10 +12,10 @@ const faker = require("faker");
         Cypress.on('uncaught:exception', (err, runnable) => {
             return false })
         methods.clickButton(loginPageLocators.loginUsername)
-        methods.fillInput(loginPageLocators.loginUsername,'ali.dede@alidede.com')
-        methods.fillInput(loginPageLocators.loginPassword,'qwer.123')
+        methods.fillInput(loginPageLocators.loginUsername,'musavir.bir@testmusavir.com')
+        methods.fillInput(loginPageLocators.loginPassword,'123')
         methods.clickButton(loginPageLocators.loginButton)
-        methods.checkTextIsVisible('Ali Dede',true)
+        methods.checkTextIsVisible('test Müşavir1',true)
 
     })
 
@@ -24,7 +24,7 @@ const faker = require("faker");
         Cypress.on('uncaught:exception', (err, runnable) => {
             return false })
         methods.clickButton(loginPageLocators.loginUsername)
-        methods.fillInput(loginPageLocators.loginUsername,'ali.dede@alidede.com')
+        methods.fillInput(loginPageLocators.loginUsername,'musavir.bir@testmusavir.com')
         methods.fillInput(loginPageLocators.loginPassword,'L')
         methods.clickButton(loginPageLocators.loginButton)
         methods.checkTextIsVisible('Invalid username or password.',true)
@@ -46,7 +46,7 @@ const faker = require("faker");
             return false })
         methods.clickButton(loginPageLocators.loginUsername)
         methods.fillInput(loginPageLocators.loginUsername,'test@outlook.com')
-        methods.fillInput(loginPageLocators.loginPassword,'qwer.123')
+        methods.fillInput(loginPageLocators.loginPassword,'123')
         methods.clickButton(loginPageLocators.loginButton)
         methods.checkTextIsVisible('Invalid username or password.',true)
 
@@ -58,7 +58,7 @@ const faker = require("faker");
             return false })
         methods.clickButton(loginPageLocators.forgotPassword)
         methods.clickButton(loginPageLocators.loginUsername)
-        methods.fillInput(loginPageLocators.loginUsername,'ali.dede@alidede.com')
+        methods.fillInput(loginPageLocators.loginUsername,'musavir.bir@testmusavir.com')
         methods.clickButton(loginPageLocators.sendRecoveryLink)
         methods.checkTextIsVisible('You should receive an email shortly with further instructions.',true)
 
@@ -80,7 +80,7 @@ const faker = require("faker");
             return false })
         methods.clickButton(loginPageLocators.forgotPassword)
         methods.clickButton(loginPageLocators.loginUsername)
-        methods.fillInput(loginPageLocators.loginUsername,'ali.dede@alidede.com')
+        methods.fillInput(loginPageLocators.loginUsername,'musavir.bir@testmusavir.com')
         methods.clickButton(loginPageLocators.sendRecoveryLink)
         methods.shouldHaveItem(loginPageLocators.loginUsername)
     })

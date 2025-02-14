@@ -10,6 +10,7 @@
     "cy:parallel-login": "cypress-parallel -s cy:login -t 6 -d 'cypress/e2e/*.cy.js' -r 'mochawesome' -o 'reportDir=report/json,overwrite=false,html=false,json=true'",
     "cy:parallel-smoke": "cypress-parallel -s cy:smoke -t 6 -d 'cypress/e2e/*.cy.js' -r 'mochawesome' -o 'reportDir=report/json,overwrite=false,html=false,json=true'",
     "cy:parallel-test": "cypress-parallel -s cy:run -t 6 -d 'cypress/e2e/*.cy.js' -r 'mochawesome' -o 'reportDir=report/json,overwrite=false,html=false,json=true'",
+    "report:mochawesome": "cypress run --reporter mochawesome",
     "report:clean": "rm -rf report cypress/screenshots cypress/reports cypress/videos runner-results multi-reporter-config.json cypress/parallel-weights.json",
     "report:merge": "mochawesome-merge 'report/json/*.json' > report/mochawesome.json",
     "report:build": "marge report/mochawesome.json -f index -o report --assetsDir report/assets",
@@ -27,7 +28,7 @@
   "devDependencies": {
     "@4tw/cypress-drag-drop": "^2.2.5",
     "@cypress/grep": "^3.1.5",
-    "cypress": "^13.6.1",
+    "cypress": "^14.0.1",
     "cypress-file-upload": "^5.0.8",
     "cypress-localstorage-commands": "^2.2.4",
     "cypress-mochawesome-reporter": "^3.6.1",
@@ -44,6 +45,7 @@
   "dependencies": {
     "@vitejs/plugin-react": "^4.1.1",
     "cypress-parallel": "^0.13.0",
-    "cypress-plugin-xhr-toggle": "^1.0.0"
+    "cypress-plugin-xhr-toggle": "^1.0.0",
+    "mochawesome": "^7.1.3"
   }
 }
