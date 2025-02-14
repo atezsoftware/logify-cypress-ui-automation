@@ -4,7 +4,7 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
     },
-    baseUrl: "https://dev-productcatalog.singlewindow.io/",
+    baseUrl: "https://test-productcatalog.singlewindow.io/",
     chromeWebSecurity: false,
     viewportWidth: 1920,
     viewportHeight: 1080,

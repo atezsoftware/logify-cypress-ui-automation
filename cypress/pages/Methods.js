@@ -1,5 +1,6 @@
 require('cypress-xpath');
 import "cypress-real-events";
+import 'cypress-xpath';
 import  random  from 'lodash';
 import { faker } from 'faker';
 import Faker from 'faker/lib';
@@ -238,6 +239,19 @@ class Methods{
           cy.log(`Element text "${savedText}" contains "${text}".`);
         });
       });
+    }
+    afterEach() {
+      cy.clearCache();
+      cy.clearCookies();
+      cy.clearLocalStorage();
+    };
+
+    invokeText(locators, text) {
+      return cy.xpath(locators)
+        .invoke('text') // Elementin içindeki metni al
+        .then((elementText) => {
+          expect(elementText.trim()).to.include(text); // Metnin içinde belirtilen text var mı kontrol et
+        })
     }
 
 }
