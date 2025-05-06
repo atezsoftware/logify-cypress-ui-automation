@@ -20,7 +20,9 @@
     "cy:run-login": "npm run report:clean; npm run cy:parallel-login; npm run report:merge && npm run report:build",
     "cy:verify": "cypress verify",
     "e2e:record:parallel": "cypress run --browser chrome --record --parallel",
-    "start:ci": "serve --no-clipboard --listen ${PORT:-8080}"
+    "start:ci": "serve --no-clipboard --listen ${PORT:-8080}",
+    "test:report": "npx cypress run && npx mochawesome-merge cypress/reports/mochawesome/*.json > cypress/reports/mochawesome/output.json && npx marge cypress/reports/mochawesome/output.json -f report -o cypress/reports/mochawesome"
+
   },
   "keywords": [],
   "author": "",
@@ -28,7 +30,7 @@
   "devDependencies": {
     "@4tw/cypress-drag-drop": "^2.2.5",
     "@cypress/grep": "^3.1.5",
-    "cypress": "^14.0.1",
+    "cypress": "^14.3.2",
     "cypress-file-upload": "^5.0.8",
     "cypress-localstorage-commands": "^2.2.4",
     "cypress-mochawesome-reporter": "^3.6.1",

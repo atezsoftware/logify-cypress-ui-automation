@@ -30,6 +30,7 @@ const faker = require("faker");
         methods.checkTextIsVisible('Eşya Kodu',true)
         methods.checkTextIsVisible('İş Bölümü',true)
         methods.checkTextIsVisible('Eşya Tanımı - TR',true)
+        
     })
 
     it("02.Manuel Eşya Yükleme Sayfasında Kolonların Düzgün Gelmesi", () => {
@@ -70,6 +71,7 @@ const faker = require("faker");
         methods.checkTextIsVisible('GTİP',true)
         methods.checkTextIsVisible('Bilinen Dual Use Kodu',true)
         methods.checkTextIsVisible('Model No',true)
+        
     })
 
     it("03.Zorunlu Alanlar Girilirse Gönder Butonu Aktif Olmalı", () => {
@@ -110,7 +112,9 @@ const faker = require("faker");
                 }
                 const productDescription = generateProductDescription(6);
         methods.fillInput(createManuelUploadItemLocators.productDescriptionTextBoxTRCMD, productDescription)
+        methods.realClickElement(createManuelUploadItemLocators.productDescriptionTextBoxDECMD)
         methods.checkButtonNotDisabled(createManuelUploadItemLocators.submitButtonInCreateDataScreen)
+        
     })
 
     it("04.Zorunlu Alanlardan En Az Biri Girilmezse Gönder Butonu Pasif Olmalı", () => {
@@ -141,6 +145,7 @@ const faker = require("faker");
                 const productName = generateProductName(6);
         methods.fillInput(createManuelUploadItemLocators.productIdTextBoxCMD, productName)
         methods.checkButtonDisabled(createManuelUploadItemLocators.submitButtonInCreateDataScreen)
+        
     })
 
     it("05.Dolu Olan Zorunlu Alanlardan En Az Biri Silinirse Gönder Butonu Pasif Olmalı", () => {
@@ -183,6 +188,7 @@ const faker = require("faker");
         methods.fillInput(createManuelUploadItemLocators.productDescriptionTextBoxTRCMD, productDescription)
         methods.clearTextfield(createManuelUploadItemLocators.productIdTextBoxCMD)
         methods.checkButtonNotDisabled(createManuelUploadItemLocators.submitButtonInCreateDataScreen)
+        
     })
 
     it("06.Eşya Kodu Alanının Unic Olması", () => {
@@ -227,6 +233,7 @@ const faker = require("faker");
         methods.fillInput(createManuelUploadItemLocators.productIdTextBoxCMDSecond, productName)
         methods.fillInput(createManuelUploadItemLocators.productDescriptionTextBoxTRCMDSecond, productDescription)
         methods.checkTextIsVisible('Tekrarlanan eşya kodları bulunmaktadır.',true)
+        
     })
 
     it("07.Var Olan Eşyanın Yazılması", () => {
@@ -274,7 +281,7 @@ const faker = require("faker");
         methods.fillInput(createManuelUploadItemLocators.productIdTextBoxCMD, productName)
         methods.clickButton(createManuelUploadItemLocators.productDescriptionTextBoxDECMD)
         methods.shouldHaveValue(createManuelUploadItemLocators.productDescriptionTextBoxTRCMD, productDescription)
-
+        
     })
 
     it("10.Modalda Yapılan Seçime Göre Gelmeli (Ülke/Hizmet seçimleri)", () => {
@@ -307,7 +314,7 @@ const faker = require("faker");
         methods.checkRadioButtonSelected(createManuelUploadItemLocators.trCusCmpCheckBoxServicesModal)
         methods.checkRadioButtonSelected(createManuelUploadItemLocators.trRglCmpImCheckBoxServicesModal)
         methods.checkRadioButtonSelected(createManuelUploadItemLocators.trRglCmpExCheckBoxServicesModal)
-
+        
     })
 
     it("11.Brüt ağırlık girildiğinde Net Ağırlık ve Ağırlık Biriminden en az biri girilmemişse uyarı gelmeli", () => {
@@ -350,7 +357,7 @@ const faker = require("faker");
                 const productDescription = generateProductDescription(6);
         methods.fillInput(createManuelUploadItemLocators.productDescriptionTextBoxTRCMD, productDescription)
         methods.checkTextIsVisible('Lütfen Eşya kodlarının karşısında bulunan alanları giriniz', true)
-
+        
     })
 
     it("12.Net ağırlık girildiğinde Brüt Ağırlık ve Ağırlık Biriminden en az biri girilmemişse uyarı gelmeli", () => {
@@ -393,7 +400,7 @@ const faker = require("faker");
                 const productDescription = generateProductDescription(6);
         methods.fillInput(createManuelUploadItemLocators.productDescriptionTextBoxTRCMD, productDescription)
         methods.checkTextIsVisible('Lütfen Eşya kodlarının karşısında bulunan alanları giriniz', true)
-
+        
     })
 
     it("13.Ağırlık Birimi girildiğinde Net Ağırlık ve Brüt Biriminden en az biri girilmemişse uyarı gelmeli", () => {
@@ -437,7 +444,7 @@ const faker = require("faker");
         methods.clickButton(createManuelUploadItemLocators.weightUnitOfMeasureCMD)
         methods.clickText('KG')
         methods.checkTextIsVisible('Lütfen Eşya kodlarının karşısında bulunan alanları giriniz', true)
-
+        
     })
 
     it("14.Eşya Grup Kodu Alanına Giriş Yapılınca Başarıyla Kaydetmesi", () => {
@@ -484,7 +491,7 @@ const faker = require("faker");
         methods.clickButton(createManuelUploadItemLocators.submitButtonOnSubmitModalCMD)
         methods.clickButton(createManuelUploadItemLocators.productPoolButtonSubmitModalCMD)
         methods.shouldHaveText(createManuelUploadItemLocators.productPoolProductGroupCodeFirstText, "testEşyaGrupKodu")
-
+        
     })
 
     it("15.Eşya Grup Kodu Alanına Giriş Yapılmaması durumunda sistem tarafından grup kodu atanır", () => {
@@ -531,7 +538,7 @@ const faker = require("faker");
         methods.clickButton(createManuelUploadItemLocators.productPoolButtonSubmitModalCMD)
         methods.wait(3000)
         methods.invokeText(createManuelUploadItemLocators.productPoolProductGroupCodeFirstText, "MFT")
-
+        
     })
 
     it("16.Şablonlar Kontrolü", () => {
@@ -550,10 +557,10 @@ const faker = require("faker");
         methods.clickButton(createManuelUploadItemLocators.uploadItemSelectFirmModalNextButton)
         methods.clickButton(createManuelUploadItemLocators.manuelUploadItemButtonServicesModal)
         methods.clickElementTrigger(createManuelUploadItemLocators.createButtonServicesModal)
-        methods.clickButton(createMasterDataLocators.downloadableContentCMD)
-        methods.clickButton(createMasterDataLocators.turkceExcelTemplateCMD)
+        methods.clickButton(createManuelUploadItemLocators.downloadableContentCMD)
+        methods.clickButton(createManuelUploadItemLocators.turkceExcelTemplateCMD)
         methods.checkTextIsVisible('TürkçeExcelŞablonu.xlsx İndirildi',true)
-
+        
     })
 
     it("17.Eşya oluşturma ekranında excelle eşya yükleme '200 kalem altı'", () => {
@@ -576,7 +583,7 @@ const faker = require("faker");
         cy.get('[data-test-id="excel-upload-drawer"]').attachFile(fixtureFile);
         methods.wait(10000)
         methods.shouldHaveValue(createManuelUploadItemLocators.productIdTextBoxCMD, 'testOtomasyon-001')
-
+        
     })
 
     it("18.Eşya oluşturma ekranında excelle eşya yükleme '200 kalem üstü'", () => {
@@ -599,7 +606,7 @@ const faker = require("faker");
         cy.get('[data-test-id="excel-upload-drawer"]').attachFile(fixtureFile);
         methods.wait(10000)
         methods.checkTextIsVisible('En fazla 200 eşya yükleyebilirsiniz. Lütfen dokümanınızı kontrol edin. Daha fazla sayıda eşya yüklemek için aynı adımları tekrar etmeniz ve yeni yükleme yapmanız gerekmektedir.', true)
-
+        
     })
 
     it("19.Toplu Doküman Ekleme butonuyla kalemlere doküman ekleme", () => {
@@ -670,7 +677,7 @@ const faker = require("faker");
         //methods.checkTextIsVisible('başarılıExcel.xlsx Doküman tüm kalemlere eklenmiştir', true)
         methods.fillInput(createManuelUploadItemLocators.urlTextBoxModalCMD, 'www.atez.com{enter}')
         methods.checkTextIsVisible('Doküman tüm kalemlere eklenmiştir', true)
-
+        
     })
 
     it("20.Kalem Bazlı Doküman ve URL Eklenmesi", () => {
@@ -716,7 +723,7 @@ const faker = require("faker");
         methods.fillInput(createManuelUploadItemLocators.urlTextBoxModalCMDOnLine, 'www.atez.com{enter}')
         methods.checkTextIsVisible('Doküman tüm kalemlere eklenmiştir', true)
         methods.checkTextIsVisible('www.atez.com', true)
-
+        
     })
 
     it("24.Üretici Modalına Başarılı Şekilde Üretici Ekleme", () => {
@@ -752,7 +759,7 @@ const faker = require("faker");
         methods.clickButton(createManuelUploadItemLocators.saveButtonAddManufaturerModalCMD)
         methods.wait(25000)
         methods.checkTextIsVisible(manufacturerName, true)
-
+        
     })
 
     it("25.Excel Yükleme ile Tablo Verileri Doldurma", () => {
@@ -796,7 +803,7 @@ const faker = require("faker");
         methods.shouldHaveValue(createManuelUploadItemLocators.chHsTextBoxHsModalCMD, '8704.31.30')
         methods.shouldHaveValue(createManuelUploadItemLocators.trHsTextBoxHsModalCMD, '3926.10.00.00.00')
         methods.shouldHaveValue(createManuelUploadItemLocators.deHsTextBoxHsModalCMD, '0102.21.10')
-
+        
     })
 
     it("26.Tedarikçi Modalına Başarılı Şekilde Üretici Ekleme", () => {
@@ -832,7 +839,7 @@ const faker = require("faker");
         methods.clickButton(createManuelUploadItemLocators.saveButtonAddSupplierButtonModalCMD)
         methods.wait(5000)
         methods.checkTextIsVisible(supplierName, true)
-
+        
     })
 
     it("27.Satır Silme butonu", () => {
@@ -874,8 +881,9 @@ const faker = require("faker");
                 const productDescription = generateProductDescription(6);
         methods.fillInput(createManuelUploadItemLocators.productDescriptionTextBoxTRCMD, productDescription)
         methods.clickButton(createManuelUploadItemLocators.deleteLineButtonCMD)
+        methods.clickButton(createManuelUploadItemLocators.deleteAllButtonWarningYesButtonCMD)
         methods.shouldNotHaveValue(createManuelUploadItemLocators.productIdTextBoxCMD, productName)
-
+        
     })
 
     it("28.Tüm satırları silme butonu", () => {
@@ -943,10 +951,10 @@ const faker = require("faker");
         methods.clickButton(createManuelUploadItemLocators.deleteAllLineButtonCMD)
         methods.clickButton(createManuelUploadItemLocators.deleteAllButtonWarningYesButtonCMD)
         methods.shouldNotHaveValue(createManuelUploadItemLocators.productIdTextBoxCMD, productName)
-
+        
     })
 
-    it.only("29.Satır kopyalama butonuyla, alanlar başarıyla kopyalanıyor", () => {
+    it("29.Satır kopyalama butonuyla, alanlar başarıyla kopyalanıyor", () => {
         methods.visit()
         Cypress.on('uncaught:exception', (err, runnable) => {
             return false })
@@ -1011,7 +1019,7 @@ const faker = require("faker");
         methods.clickButton(createManuelUploadItemLocators.deleteAllLineButtonCMD)
         methods.clickButton(createManuelUploadItemLocators.deleteAllButtonWarningYesButtonCMD)
         methods.shouldNotHaveValue(createManuelUploadItemLocators.productIdTextBoxCMD, productName)
-
+        
     })
 
 })
