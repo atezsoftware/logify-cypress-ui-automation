@@ -46,8 +46,18 @@ class Methods{
     checkTextIsVisible(text, visibility = true) {
       cy.contains('body', text).should(visibility ? 'be.visible' : 'not.exist');
     }
+    checkTextIsNotPresent(text) {
+      cy.contains('body', text, { matchCase: false }).should('not.exist');
+    }
     selectCheckbox(locator) {
       return this.findElement(locator).check({force: true});
+    }
+    unselectCheckbox(locator) {
+      return this.findElement(locator).then(($el) => {
+        if ($el.is(':checked')) {
+          cy.wrap($el).click({ force: true });
+        }
+      });
     }
     selectItem(locators,text){
         return cy.xpath(locators).select(text)

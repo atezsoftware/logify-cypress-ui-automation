@@ -13,7 +13,7 @@ const faker = require("faker");
             return false })
         methods.clickButton(loginPageLocators.loginUsername)
         methods.fillInput(loginPageLocators.loginUsername,'musavir.bir@testmusavir.com')
-        methods.fillInput(loginPageLocators.loginPassword,'123')
+        methods.fillInput(loginPageLocators.loginPassword,'test123')
         methods.clickButton(loginPageLocators.loginButton)
         methods.checkTextIsVisible('test Müşavir1',true)
 

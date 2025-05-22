@@ -1,0 +1,27 @@
+export default{
+    trackingMonitorButtonOnTab: "/html/body/div[1]/main/div/header/div[2]/ul/li[2]/div",
+    productPoolButtonInTrackingMonitorDropdown: "//span[contains(text(),'Eşya Atama Havuzu')]",
+    collapsButtonProductPool:"/html/body/div[1]/main/div/main/div/aside/div/div/div[1]/button",
+    genelBilgilerMetin: "//*[@id='__next']/main/div/main/div/aside/div/div/div[1]/span",
+    chGTİPCheckbox: "//input[@id='HsCls-CH']",
+    chDualUseCheckbox: "//input[@id='ExpCnt-CH']",
+    chYaptırımlarıCheckbox: "//input[@id='Snctn-CH']",
+    deGTİPCheckbox: "//input[@id='HsCls-DE']",
+    deDualUseCheckbox: "//input[@id='ExpCnt-DE']",
+    deSKDMCheckbox: "//input[@id='Cbam-DE']",
+    euGTİPCheckbox: "//input[@id='HsCls-EU']",
+    euSKDMCheckbox: "//input[@id='Cbam-EU']",
+    ukGTİPCheckbox: "//input[@id='HsCls-UK']",
+    trGTİPCheckbox: "//input[@id='HsCls-TR']",
+    trGümrükMevzuatıCheckbox: "//input[@id='CusCmp-TR']",
+    trİthalatMevzuatıCheckbox: "//input[@id='RglCmpIm-TR']",
+    trİhracatMevzuatıCheckbox: "//input[@id='RglCmpEx-TR']",
+    closeButtonProductPoolModal: "/html/body/div[2]/div/div[2]/div/div[2]/div/div/div/div[2]/button[1]",
+    PPTrGTİPCheckbox: "//input[@value='HsCls']",
+    PPTrGümrükMevzuatıCheckbox: "//input[@value='CusCmp']",
+    PPTrİthalatMevzuatıCheckbox: "//input[@value='RglCmpIm']",
+    PPTrİhracatMevzuatıCheckbox: "//input[@value='RglCmpEx']",
+    assignedProductsButtonInProductPoolPage:"//button//span[contains(text(),'İş Listem')]",
+
+
+};
