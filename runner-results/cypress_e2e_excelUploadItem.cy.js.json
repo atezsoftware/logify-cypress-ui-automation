@@ -1,0 +1,10 @@
+{
+  "suites": 1,
+  "tests": 1,
+  "passes": 1,
+  "pending": 0,
+  "failures": 0,
+  "start": "2025-06-13T12:49:11.367Z",
+  "duration": 2665,
+  "file": "cypress/e2e/excelUploadItem.cy.js"
+}

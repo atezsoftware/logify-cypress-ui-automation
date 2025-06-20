@@ -1,0 +1,10 @@
+{
+  "suites": 1,
+  "tests": 24,
+  "passes": 6,
+  "pending": 0,
+  "failures": 18,
+  "start": "2025-06-13T12:49:13.271Z",
+  "duration": 529791,
+  "file": "cypress/e2e/createManuelUploadItem.cy.js"
+}

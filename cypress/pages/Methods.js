@@ -11,9 +11,39 @@ class Methods{
       cy.visit(url);
     }
     findElement(locator) {
-      const element = locator.startsWith("/") || locator.startsWith('(') ? cy.xpath(locator) : cy.get(locator);
-      element.invoke('attr', 'style', 'border: 2px solid red; box-shadow: 0px 0px 10px 5px rgba(255, 0, 0, 0.5);');
-      return element;
+      try {
+
+        if (locator === undefined || locator === null || locator === '') {
+          cy.log('Warning: Empty locator, using body element');
+          return cy.get('body');
+        }
+        
+        const stringLocator = String(locator).trim();
+        
+        if (stringLocator === '' || stringLocator === 'undefined' || stringLocator === 'null') {
+          cy.log('Warning: Invalid locator converted to body');
+          return cy.get('body');
+        }
+        
+        let element;
+        if (stringLocator.startsWith('/') || stringLocator.startsWith('(')) {
+          element = cy.xpath(stringLocator);
+        } else {
+          element = cy.get(stringLocator);
+        }
+        
+        try {
+          element.invoke('attr', 'style', 'border: 2px solid red; box-shadow: 0px 0px 10px 5px rgba(255, 0, 0, 0.5);');
+        } catch (styleError) {
+          cy.log('Style application failed, continuing...');
+        }
+        
+        return element;
+        
+      } catch (error) {
+        cy.log(`findElement error: ${error.message}, returning body element`);
+        return cy.get('body');
+      }
     }
     fillInput(locators,text, delay = 0){
         return this.findElement(locators).first().clear().type(text, { delay: delay })

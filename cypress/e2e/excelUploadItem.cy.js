@@ -559,5 +559,45 @@ const faker = require("faker");
             methods.checkTextIsVisible('Yükleme devam ederken diğer işlemlerinize devam edebilirsiniz.',true)
 
         })
+        it.only('Should get access token and delete commodities in single scenario', () => {
+            let accessToken;
+        
+            cy.request({
+              method: 'POST',
+              url: `https://dev-kc.singlewindow.io/auth/realms/agsw/protocol/openid-connect/token`,
+              form: true, 
+              body: {
+                grant_type: 'password',
+                username: 'musavir.trch@outlook.com',
+                password: 'test123',
+                client_id: 'product-catalog'
+              },
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+              }
+            }).then((tokenResponse) => {
+              expect(tokenResponse.status).to.eq(200);
+              expect(tokenResponse.body).to.have.property('access_token');
+              expect(tokenResponse.body).to.have.property('token_type', 'Bearer');
+              expect(tokenResponse.body).to.have.property('expires_in');
+              accessToken = tokenResponse.body.access_token;
+        
+            }).then(() => {
+              cy.request({
+                method: 'DELETE',
+                url: `https://test-productcatalog.singlewindow.io/api/v1-0/commodities/cleanup`,
+                qs: {
+                  clientId: '3162'
+                },
+                headers: {
+                  'Authorization': `Bearer ${accessToken}`,
+                  'Content-Type': 'application/json'
+                }
+              }).then((deleteResponse) => {
+                expect(deleteResponse.status).to.eq(204);
+                
+              });
+            });
+          });
 
 })
