@@ -12,10 +12,10 @@ const faker = require("faker");
         Cypress.on('uncaught:exception', (err, runnable) => {
             return false })
         methods.clickButton(loginPageLocators.loginUsername)
-        methods.fillInput(loginPageLocators.loginUsername,'musavir.bir@testmusavir.com')
+        methods.fillInput(loginPageLocators.loginUsername,'musavir.trch@outlook.com')
         methods.fillInput(loginPageLocators.loginPassword,'test123')
         methods.clickButton(loginPageLocators.loginButton)
-        methods.checkTextIsVisible('test Müşavir1',true)
+        methods.checkTextIsVisible('Müşavir Test',true)
 
     })
 
@@ -27,7 +27,7 @@ const faker = require("faker");
         methods.fillInput(loginPageLocators.loginUsername,'musavir.bir@testmusavir.com')
         methods.fillInput(loginPageLocators.loginPassword,'L')
         methods.clickButton(loginPageLocators.loginButton)
-        methods.checkTextIsVisible('Invalid username or password.',true)
+        methods.checkTextIsVisible('Geçersiz e-posta veya şifre.',true)
 
     })
 
@@ -36,7 +36,7 @@ const faker = require("faker");
         Cypress.on('uncaught:exception', (err, runnable) => {
             return false })
         methods.clickButton(loginPageLocators.loginButton)
-        methods.checkTextIsVisible('Invalid username or password.',true)
+        methods.checkTextIsVisible('Geçersiz e-posta veya şifre.',true)
 
     })
 
@@ -48,7 +48,7 @@ const faker = require("faker");
         methods.fillInput(loginPageLocators.loginUsername,'test@outlook.com')
         methods.fillInput(loginPageLocators.loginPassword,'123')
         methods.clickButton(loginPageLocators.loginButton)
-        methods.checkTextIsVisible('Invalid username or password.',true)
+        methods.checkTextIsVisible('Geçersiz e-posta veya şifre.',true)
 
     })
 
@@ -57,10 +57,7 @@ const faker = require("faker");
         Cypress.on('uncaught:exception', (err, runnable) => {
             return false })
         methods.clickButton(loginPageLocators.forgotPassword)
-        methods.clickButton(loginPageLocators.loginUsername)
-        methods.fillInput(loginPageLocators.loginUsername,'musavir.bir@testmusavir.com')
-        methods.clickButton(loginPageLocators.sendRecoveryLink)
-        methods.checkTextIsVisible('You should receive an email shortly with further instructions.',true)
+        methods.checkTextIsVisible('E-posta adresinizi girin ve yeni bir şifre oluşturmaya ilişkin talimatları size göndereceğiz.',true)
 
     })
 
@@ -70,19 +67,20 @@ const faker = require("faker");
             return false })
         methods.clickButton(loginPageLocators.forgotPassword)
         methods.clickButton(loginPageLocators.sendRecoveryLink)
-        methods.checkTextIsVisible('Please specify username.',true)
+        methods.checkTextIsVisible('E-posta boş olamaz.',true)
 
     })
 
-    it('07.Şifre kurtarma linkinin boş gönderilmesi', () => {
+    it('07.Şifre kurtarma linkinin gönderilmesi', () => {
         methods.visit()
         Cypress.on('uncaught:exception', (err, runnable) => {
             return false })
         methods.clickButton(loginPageLocators.forgotPassword)
         methods.clickButton(loginPageLocators.loginUsername)
-        methods.fillInput(loginPageLocators.loginUsername,'musavir.bir@testmusavir.com')
+        methods.fillInput(loginPageLocators.loginUsername,'musavir.trch@outlook.com')
         methods.clickButton(loginPageLocators.sendRecoveryLink)
-        methods.shouldHaveItem(loginPageLocators.loginUsername)
+        methods.wait(500)
+        methods.checkTextIsVisible('Daha fazla talimatla kısa sürede bir e-posta almalısınız.',true)
     })
 
     })

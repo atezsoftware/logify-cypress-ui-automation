@@ -2,6 +2,8 @@ export default{
     uploadItemButtonDashboard:"//button//span[contains(text(),'Eşya Yükle')]",
     pleaseSelectCompany:"//span[contains(text(),'Lütfen Firma Seçin')]",
     musteriTrchSelected:"//div[contains(text(),'Müşteri Firma Test')]",
+    denemeMailAşSelected:"//div[contains(text(),'DenemeMail AŞ.')]",
+    dashboardButton:'//*[@id="__next"]/main/div/header/div[2]/ul/li[1]',
     uploadItemSelectFirmModalNextButton:"//button//span[contains(text(),'Sonraki')]",
     manuelUploadItemButtonServicesModal:"//span[contains(text(),'Manuel Eşya Yükle')]",
     createButtonServicesModal:"//button[@id='create-master-data']",

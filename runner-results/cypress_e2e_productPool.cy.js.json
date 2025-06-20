@@ -1,0 +1,10 @@
+{
+  "suites": 1,
+  "tests": 58,
+  "passes": 25,
+  "pending": 0,
+  "failures": 33,
+  "start": "2025-06-13T12:49:07.487Z",
+  "duration": 953362,
+  "file": "cypress/e2e/productPool.cy.js"
+}
