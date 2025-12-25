@@ -41,12 +41,12 @@
     "cypress-xpath": "^2.0.1",
     "eslint-plugin-cypress": "^2.15.1",
     "faker": "^5.5.3",
-    "jsforce": "1.11.1",
+    "jsforce": "3.10.7",
     "lodash": "^4.17.21"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "^4.1.1",
-    "cypress-parallel": "^0.13.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "cypress-parallel": "^0.15.0",
     "cypress-plugin-xhr-toggle": "^1.0.0",
     "mochawesome": "^7.1.3"
   }
